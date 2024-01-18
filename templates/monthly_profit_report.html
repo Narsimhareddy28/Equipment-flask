@@ -1,0 +1,75 @@
+<!-- monthly_profit_report.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content here -->
+</head>
+<body>
+    <h2>Monthly Profit Report</h2>
+
+    <!-- Add a select box for months -->
+    <label for="monthSelect">Select Month:</label>
+    <select id="monthSelect">
+        <option value="0">All Months</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+    </select>
+
+    <!-- Add a select box for years -->
+    <label for="yearSelect">Select Year:</label>
+    <select id="yearSelect">
+        <option value="0">All Years</option>
+        <!-- Add options for years, dynamically or manually -->
+        <!-- For example, you may dynamically fetch years from your data -->
+        <option value="2021">2021</option>
+        <option value="2023">2022</option>
+
+        <option value="2023">2023</option>
+        <!-- Add options for other years -->
+    </select>
+
+    <button onclick="fetchData()">Fetch Data</button>
+
+    <div id="reportData">
+        <!-- Data will be displayed here -->
+    </div>
+
+    <!-- JavaScript to fetch data based on the selected month and year -->
+    <script>
+        function fetchData() {
+            var selectedMonth = document.getElementById("monthSelect").value;
+            var selectedYear = document.getElementById("yearSelect").value;
+
+            // Fetch data based on the selected month and year using AJAX
+            // Update the URL to match your Flask route
+            var url = "/report/monthly_profit";
+            if (selectedMonth) {
+                url += "?month=" + selectedMonth;
+            }
+            if (selectedYear) {
+                url += (url.includes('?') ? '&' : '?') + "year=" + selectedYear;
+            }
+
+            // Use fetch or other AJAX methods to get data from the server
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("reportData").innerHTML = data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+
+    <!-- Add your JavaScript scripts or link to external scripts if needed -->
+</body>
+</html>

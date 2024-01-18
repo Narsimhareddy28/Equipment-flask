@@ -1,0 +1,30 @@
+<!-- monthly_profit_data.html -->
+<table border="1">
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Month</th>
+            <th>Total Monthly Amount</th>
+            <th>Profit (45%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if selected_month_profit %}
+            <tr>
+                <td>{{ selected_month_profit.year }}</td>
+                <td>{{ selected_month_profit.month }}</td>
+                <td>{{ selected_month_profit.total_monthly_amount }}</td>
+                <td>{{ selected_month_profit.profit }}</td>
+            </tr>
+        {% else %}
+            {% for profit in monthly_profits %}
+                <tr>
+                    <td>{{ profit.year }}</td>
+                    <td>{{ profit.month }}</td>
+                    <td>{{ profit.total_monthly_amount }}</td>
+                    <td>{{ profit.profit }}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </tbody>
+</table>

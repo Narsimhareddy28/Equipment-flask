@@ -1,0 +1,49 @@
+<!-- manager_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content here -->
+</head>
+<body>
+    <h1>Manager Dashboard</h1>
+
+    <!-- Display the list of equipment -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Manufacturer</th>
+                <th>Quantity</th>
+                <th>Rent per Day</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipment in equipment_list %}
+                <tr>
+                    <td>{{ equipment.equipment_name }}</td>
+                    <td>{{ equipment.manufacturer }}</td>
+                    <td>{{ equipment.description }}</td>
+
+                    <td>{{ equipment.quantity_in_store }}</td>
+
+                    <td>{{ equipment.rent_price_per_day }}</td>
+                    <td><a href="{{ url_for('update_equipment', equipment_id=equipment.equipment_id) }}">Update</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/addequipment">Add Equipment</a>
+    <a href="/takeorder">Take Order</a>
+    <a href="/clients">Customer report</a>
+    <a href="/report/order_history">Customer Equipment report</a>
+    <a href="/report/paymentreport">payment report</a>    
+    <a href="/report/pending_payments">pending payment report</a>
+    <a href="/report/monthly_profit">monthly report</a>
+
+
+
+
+</body>
+</html>

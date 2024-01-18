@@ -1,0 +1,20 @@
+<!-- clients_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content here -->
+</head>
+<body>
+    <h2>Clients List</h2>
+
+    <ul>
+        {% for client in clients %}
+            <li>
+                {{ client.client_name }} - {{ client.telephone_number }} - {{ client.client_address }}
+                <button onclick="window.location.href='{{ url_for('order_history', client_id=client.client_id) }}'">View Order History</button>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

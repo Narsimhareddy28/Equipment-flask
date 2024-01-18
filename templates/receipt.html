@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Receipt</title>
+    <style>
+        /* Your CSS styles for the receipt */
+    </style>
+</head>
+<body>
+    <h1>Rental Receipt</h1>
+
+    <h2>Company Information</h2>
+<p>Name: {{ manufacturer_name }}</p>
+<p>address : Hyderabad,reIndia</p>
+
+
+    <h2>Order Details</h2>
+    <p>Order ID: {{ order.order_id }}</p>
+    <p>Client ID: {{ client.client_id }}</p>
+    <p>Client Name: {{ client.client_name }}</p>
+
+    <h2>Equipment Details</h2>
+    <p>Equipment ID: {{ equipment.equipment_id }}</p>
+    <p>Equipment Name: {{ equipment.equipment_name }}</p>
+    <p>Equipment Description: {{ equipment.description }}</p>
+    <p>Equipment Manufacturer: {{ equipment.manufacturer }}</p>
+
+    <h2>Rental Dates and Price</h2>
+    <p>Start Date: {{ start_date }}</p>
+    <p>End Date: {{ end_date }}</p>
+    <p>Total Amount: ${{ order.total_price }}</p>
+    <p>Amount Paid: ${{ order.amount_paid }}</p>
+    <p>Pending Amount: ${{ pending_amount }}</p>
+
+    <h2>Payment Instructions</h2>
+    <p>Make the check payable to:</p>
+    <p>Name: MedCo</p>
+    <p>Write your Order ID on the memo line of the check. (Order ID: {{ order.order_id }})</p>
+    
+    <!-- Add additional payment instructions if needed -->
+
+    <!-- Your other receipt content here -->
+</body>
+</html>

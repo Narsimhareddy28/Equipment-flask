@@ -1,0 +1,28 @@
+<!-- Form to edit an existing order -->
+<h2>Edit Order</h2>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <!-- Include the same fields as in the RentForm -->
+    <!-- Adjust the form fields based on your requirements -->
+    <div>
+        {{ form.equipment.label }}
+        {{ form.equipment(class="form-control") }}
+    </div>
+    <div>
+        {{ form.quantity.label }}
+        {{ form.quantity(class="form-control") }}
+    </div>
+    <div>
+        {{ form.start_date.label }}
+        {{ form.start_date(class="form-control") }}
+    </div>
+    <div>
+        {{ form.end_date.label }}
+        {{ form.end_date(class="form-control") }}
+    </div>
+    <div>
+        {{ form.amount_paid.label }}
+        {{ form.amount_paid(class="form-control") }}
+    </div>
+    <button type="submit">Update Order</button>
+</form>

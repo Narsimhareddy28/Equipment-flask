@@ -1,0 +1,20 @@
+<!-- order_history.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content here -->
+</head>
+<body>
+    <h2>Order History for {{ client.name }}</h2>
+
+    <ul>
+        {% for order, equipment_name in orders %}
+            <li>
+         {{ equipment_name }} -- {{ order.start_date }} - {{ order.end_date }} - {{ order.quantity }} - {{ order.amount_paid }}  
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add your JavaScript scripts or link to external scripts if needed -->
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- update_equipment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content here -->
+</head>
+<body>
+    <h2>Update Equipment</h2>
+
+    <!-- Display the update form -->
+    <form method="post" action="{{ url_for('update_equipment', equipment_id=equipment.equipment_id) }}">
+        {{ form.csrf_token }}
+
+        <!-- Add your form fields for updating equipment details -->
+        <label for="equipment_name">Equipment Name:</label>
+        <input type="text" id="equipment_name" name="equipment_name" value="{{ form.equipment_name.data }}" required>
+
+        <label for="manufacturer">Manufacturer:</label>
+        <input type="text" id="manufacturer" name="manufacturer" value="{{ form.manufacturer.data }}" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description">{{ form.description.data }}</textarea>
+
+        <label for="rent_price_per_day">Rent per Day:</label>
+        <input type="number" id="rent_price_per_day" name="rent_price_per_day" value="{{ form.rent_price_per_day.data }}" required>
+
+        <label for="quantity_in_store">Quantity in Store:</label>
+        <input type="number" id="quantity_in_store" name="quantity_in_store" value="{{ form.quantity_in_store.data }}" required>
+
+        <!-- Add more fields as needed -->
+
+        <button type="submit">Update Equipment</button>
+    </form>
+</body>
+</html>

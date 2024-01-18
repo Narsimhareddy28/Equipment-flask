@@ -1,0 +1,59 @@
+
+<!-- add_equipment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Equipment</title>
+    <!-- Add your CSS styles or link to external stylesheets if needed -->
+</head>
+<body>
+    <h2>Add Equipment</h2>
+
+    <!-- Display the form for adding equipment -->
+    <form method="post" action="{{ url_for('add_equipment') }}">
+        {{ form.csrf_token }}
+        
+        <!-- Equipment Name -->
+        <div>
+            <label for="equipment_name">Equipment Name:</label>
+            <input type="text" id="equipment_name" name="equipment_name" required>
+        </div>
+
+        <!-- Manufacturer -->
+        <div>
+            <label for="manufacturer">Manufacturer:</label>
+            <input type="text" id="manufacturer" name="manufacturer" required>
+        </div>
+
+        <!-- Description -->
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+        </div>
+
+        <!-- Rent per Day -->
+        <div>
+            <label for="rent_price_per_day">Rent per Day:</label>
+            <input type="number" id="rent_price_per_day" name="rent_price_per_day" required>
+        </div>
+
+        <!-- Quantity in Store -->
+        <div>
+            <label for="quantity_in_store">Quantity in Store:</label>
+            <input type="number" id="quantity_in_store" name="quantity_in_store" required>
+        </div>
+        <div>
+            <label for="quantity_in_store">Supplier ID:</label>
+            <input type="number" id="supplier_id" name="supplier_id" required>
+        </div>
+
+        <!-- Add more fields as needed -->
+
+        <button type="submit">Add Equipment</button>
+    </form>
+
+    <!-- Add your JavaScript scripts or link to external scripts if needed -->
+</body>
+</html>

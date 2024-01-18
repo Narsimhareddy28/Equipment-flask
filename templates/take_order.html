@@ -1,0 +1,57 @@
+<!-- take_order.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content here -->
+</head>
+<body>
+    <h2>Take Order</h2>
+
+    <!-- Display the form for taking orders -->
+    <form method="post" action="{{ url_for('take_order') }}">
+        {{ form.csrf_token }}
+
+        <!-- Client Selection -->
+        <div>
+            <label for="client_selection">Client:</label>
+            {{ form.client_selection() }}
+        </div>
+
+        <!-- Equipment Selection -->
+        <div>
+            <label for="equipment">Equipment:</label>
+            {{ form.equipment() }}
+        </div>
+
+        <!-- Quantity -->
+        <div>
+            <label for="quantity">Quantity:</label>
+            {{ form.quantity() }}
+        </div>
+
+        <!-- Start Date -->
+        <div>
+            <label for="start_date">Start Date:</label>
+            {{ form.start_date() }}
+        </div>
+
+        <!-- End Date -->
+        <div>
+            <label for="end_date">End Date:</label>
+            {{ form.end_date() }}
+        </div>
+
+        <!-- Amount Paid -->
+        <div>
+            <label for="amount_paid">Amount Paid:</label>
+            {{ form.amount_paid() }}
+        </div>
+
+        <!-- Add more fields as needed -->
+
+        <button type="submit">Take Order</button>
+    </form>
+
+    <!-- Add your JavaScript scripts or link to external scripts if needed -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- order_history_report.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your head content here -->
+</head>
+<body>
+    <h2>Payments Report</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Client Name</th>
+                <th>Equipment Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Total Amount</th>
+                <th> Amount paid</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for order, client_name, equipment_name in orders %}
+                <tr>
+                    <td>{{ client_name }}</td>
+                    <td>{{ equipment_name }}</td>
+                    <td>{{ order.start_date }}</td>
+                    <td>{{ order.end_date }}</td>
+                    <td>{{ order.total_price }}</td>
+                    <td>{{ order.amount_paid }}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Add your JavaScript scripts or link to external scripts if needed -->
+</body>
+</html>

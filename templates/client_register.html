@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Registration</title>
+</head>
+<body>
+    <h1>Client Registration</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <p>{{ form.client_name.label }}</p>
+        <p>{{ form.client_name }}</p>
+        <p>{{ form.client_address.label }}</p>
+        <p>{{ form.client_address }}</p>
+        <p>{{ form.telephone_number.label }}</p>
+        <p>{{ form.telephone_number }}</p>
+        <p>{{ form.username.label }}</p>
+        <p>{{ form.username }}</p>
+        <p>{{ form.password.label }}</p>
+        <p>{{ form.password }}</p>
+        <p>{{ form.confirm_password.label }}</p>
+        <p>{{ form.confirm_password }}</p>
+        <p>{{ form.submit }}</p>
+    </form>
+</body>
+</html>

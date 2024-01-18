@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Login</title>
+</head>
+<body>
+    <h1>Manager Login</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <p>{{ form.username.label }}</p>
+        <p>{{ form.username }}</p>
+        <p>{{ form.password.label }}</p>
+        <p>{{ form.password }}</p>
+        <p>{{ form.submit }}</p>
+        <a href="/manager/register">manager Register</a>
+
+    </form>
+</body>
+</html>
